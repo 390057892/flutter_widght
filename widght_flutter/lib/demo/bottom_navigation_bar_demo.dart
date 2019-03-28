@@ -21,7 +21,7 @@ class _BottomNavigationBarDemoState extends State<BottomNavigationBarDemo> {
       currentIndex: _currentIndex,
       onTap: _onTabHandler,
       type: BottomNavigationBarType.fixed,
-      fixedColor: Colors.black,
+      fixedColor: Colors.blue,
       items: [
         BottomNavigationBarItem(
           icon: Icon(Icons.explore),

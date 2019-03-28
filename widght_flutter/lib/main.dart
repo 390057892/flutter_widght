@@ -3,6 +3,7 @@ import 'demo/listview_demo.dart';
 import 'demo/drawer_demo.dart';
 import 'demo/bottom_navigation_bar_demo.dart';
 import 'demo/basic_demo.dart';
+import 'demo/layout_demo.dart';
 
 void main() => runApp(MyApp());
 
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
       home: Home(),
       theme: ThemeData(
           //主题
-          primarySwatch: Colors.yellow,
+          primarySwatch: Colors.blue,
           highlightColor: Color.fromRGBO(255, 255, 255, 0.5), //选中高亮颜色
           splashColor: Colors.white70, //水波纹颜色
           platform: TargetPlatform.iOS),
@@ -37,16 +38,11 @@ class Home extends StatelessWidget {
                 tooltip: 'search',
                 onPressed: () => debugPrint('search press'),
               ),
-              IconButton(
-                icon: Icon(Icons.more_horiz),
-                tooltip: 'more',
-                onPressed: () => debugPrint('more press'),
-              ),
             ],
             elevation: 4.0,
             bottom: TabBar(
               unselectedLabelColor: Colors.black38,
-              indicatorColor: Colors.black54,
+              indicatorColor: Colors.white,
               indicatorSize: TabBarIndicatorSize.label,
               indicatorWeight: 1.0,
               tabs: <Widget>[
@@ -61,9 +57,8 @@ class Home extends StatelessWidget {
           body: TabBarView(
             children: <Widget>[
               ListViewDemo(),
-              // Icon(Icons.change_history, size: 128, color: Colors.black12),
               BasicDemo(),
-              Icon(Icons.directions_bike, size: 128, color: Colors.black12),
+              LayoutDemo(),
             ],
           ),
           drawer: DrawerDemo(),

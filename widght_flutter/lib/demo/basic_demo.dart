@@ -41,7 +41,7 @@ class BasicDemo extends StatelessWidget {
                 boxShadow: [
                   BoxShadow(
                       offset: Offset(6.0, 7.0),
-                      color: Color.fromRGBO(16, 20, 188, 1.0),
+                      color: Colors.blue,
                       blurRadius: 10, //blurRadius 模糊程度
                       spreadRadius: 1.0 //spreadRadius 阴影扩散成都
                       ) //BoxShadow 阴影
@@ -50,7 +50,7 @@ class BasicDemo extends StatelessWidget {
                 gradient: LinearGradient(
                   colors: [
                     Color.fromRGBO(7, 102, 255, 1.0),
-                    Color.fromRGBO(3, 28, 128, 1.0)
+                    Colors.blue[300]
                   ],
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
