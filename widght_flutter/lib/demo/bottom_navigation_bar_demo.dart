@@ -28,12 +28,12 @@ class _BottomNavigationBarDemoState extends State<BottomNavigationBarDemo> {
           title: Text('explore'),
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.history),
-          title: Text('history'),
+          icon: Icon(Icons.slideshow),
+          title: Text('slideshow'),
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.list),
-          title: Text('list'),
+          icon: Icon(Icons.table_chart),
+          title: Text('table_chart'),
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.person),

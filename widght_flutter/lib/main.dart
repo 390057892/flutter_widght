@@ -27,7 +27,7 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 3,
+      length: 4,
       child: Scaffold(
           backgroundColor: Colors.grey[100],
           appBar: AppBar(
@@ -46,11 +46,12 @@ class Home extends StatelessWidget {
               indicatorSize: TabBarIndicatorSize.label,
               indicatorWeight: 1.0,
               tabs: <Widget>[
-                Tab(icon: Icon(Icons.local_florist)),
-                Tab(icon: Icon(Icons.change_history)),
+                Tab(icon: Icon(Icons.list)),
+                Tab(icon: Icon(Icons.gradient)),
                 Tab(
-                  icon: Icon(Icons.directions_bike),
-                )
+                  icon: Icon(Icons.photo_library),
+                ),
+                Tab(icon: Icon(Icons.history)),
               ],
             ),
           ),
@@ -58,6 +59,7 @@ class Home extends StatelessWidget {
             children: <Widget>[
               ListViewDemo(),
               BasicDemo(),
+              LayoutDemo(),
               LayoutDemo(),
             ],
           ),
