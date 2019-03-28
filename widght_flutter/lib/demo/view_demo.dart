@@ -14,7 +14,7 @@ class ViewDemo extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              Text(posts[index].title,style:TextStyle(fontWeight:FontWeight.bold) ,),
+              Text(posts[index].title,style:TextStyle(fontWeight:FontWeight.bold)),
               Text(posts[index].author)
             ],
           ),
