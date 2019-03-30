@@ -2,32 +2,24 @@ import 'package:flutter/material.dart';
 import '../model/post.dart';
 
 class ViewDemo extends StatelessWidget {
-  Widget _pageItemBuilder(BuildContext context, int index) {
-    return Stack(
-      children: <Widget>[
-        SizedBox.expand(
-          child: Image.network(posts[index].imageUrl, fit: BoxFit.cover),
-        ),
-        Positioned(
-          bottom: 10.0,
-          left: 10.0,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              Text(posts[index].title,style:TextStyle(fontWeight:FontWeight.bold)),
-              Text(posts[index].author)
-            ],
-          ),
-        )
-      ],
+
+  Widget _itemBuilder(BuildContext context,int index){
+    return Container(
+      child: Image.network(posts[index].imageUrl,fit:BoxFit.cover),
     );
   }
 
   @override
   Widget build(BuildContext context) {
-    return PageView.builder(
+    return GridView.builder(
+      padding: EdgeInsets.all(8.0),
       itemCount: posts.length,
-      itemBuilder: _pageItemBuilder,
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 3,
+          crossAxisSpacing: 8.0,
+          mainAxisSpacing: 8.0
+        ),
+        itemBuilder: _itemBuilder,
     );
   }
 }
@@ -69,3 +61,86 @@ class PageViewDemo extends StatelessWidget {
     );
   }
 }
+
+//动态pageview
+class PageBuilderDemo extends StatelessWidget {
+  Widget _pageItemBuilder(BuildContext context, int index) {
+    return Stack(
+      children: <Widget>[
+        SizedBox.expand(
+          child: Image.network(posts[index].imageUrl, fit: BoxFit.cover),
+        ),
+        Positioned(
+          bottom: 10.0,
+          left: 10.0,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              Text(posts[index].title,
+                  style: TextStyle(fontWeight: FontWeight.bold)),
+              Text(posts[index].author)
+            ],
+          ),
+        )
+      ],
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return PageView.builder(
+      itemCount: posts.length,
+      itemBuilder: _pageItemBuilder,
+    );
+  }
+}
+
+//固定gridview
+class GridViewDemo extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    List<Widget> _itemBuilder(int length) {
+      return List.generate(length, (int index) {
+        return Container(
+          color: Colors.green[100],
+          alignment: Alignment(0.0, 0.0),
+          child: Text('Item $index'),
+        );
+      });
+    }
+
+    return GridView.count(
+        crossAxisCount: 3,
+        crossAxisSpacing: 10.0,
+        mainAxisSpacing: 10.0,
+        scrollDirection: Axis.horizontal,
+        padding: EdgeInsets.all(10),
+        children: _itemBuilder(50));
+  }
+}
+
+//限制长度gridview
+class GridViewExtDemo extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    List<Widget> _itemBuilder(int length) {
+      return List.generate(length, (int index) {
+        return Container(
+          color: Colors.green[100],
+          alignment: Alignment(0.0, 0.0),
+          child: Text('Item $index'),
+        );
+      });
+    }
+
+    return GridView.extent(
+        maxCrossAxisExtent: 100,
+        crossAxisSpacing: 10.0,
+        mainAxisSpacing: 10.0,
+        scrollDirection: Axis.vertical,
+        padding: EdgeInsets.all(10),
+        children: _itemBuilder(50));
+  }
+}
+
+//动态gridview
