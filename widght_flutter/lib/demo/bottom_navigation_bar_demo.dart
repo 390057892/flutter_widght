@@ -17,29 +17,6 @@ class _BottomNavigationBarDemoState extends State<BottomNavigationBarDemo> {
 
   @override
   Widget build(BuildContext context) {
-    return BottomNavigationBar(
-      currentIndex: _currentIndex,
-      onTap: _onTabHandler,
-      type: BottomNavigationBarType.fixed,
-      fixedColor: Colors.blue,
-      items: [
-        BottomNavigationBarItem(
-          icon: Icon(Icons.explore),
-          title: Text('explore'),
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.history),
-          title: Text('history'),
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.list),
-          title: Text('list'),
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.person),
-          title: Text('person'),
-        ),
-      ],
-    );
+    return Container();
   }
 }

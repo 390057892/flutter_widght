@@ -1,53 +1,58 @@
 import 'package:flutter/material.dart';
-import '../demo/listview_demo.dart';
+import '../demo/drawer_demo.dart';
+import '../demo/bottom_navigation_bar_demo.dart';
+import '../view/fitst_page.dart';
+import '../demo/sliver_demo.dart';
+import '../demo/hello_demo.dart';
+import '../demo/navigator_demo.dart';
 
-import '../demo/basic_demo.dart';
-import '../demo/layout_demo.dart';
-import '../demo/view_demo.dart';
+class HomePageDemo extends StatefulWidget {
+  @override
+  _HomePageDemoState createState() => _HomePageDemoState();
+}
 
-class HomePageDemo extends StatelessWidget {
+class _HomePageDemoState extends State<HomePageDemo> {
+  int _currentIndex = 0;
+  final List<Widget> _children = [
+    FirstPage(),
+    SliverDemo(),
+    Hello(),
+    NavigatorDemo()
+  ];
   @override
   Widget build(BuildContext context) {
-    return DefaultTabController(
-      length: 4,
-      child: Scaffold(
-        appBar: AppBar(
-           leading:IconButton(
-              icon: Icon(Icons.menu),
-              tooltip: 'menu',
-              onPressed: ()=>Scaffold.of(context).openDrawer(),
+    return Scaffold(
+        body: _children[_currentIndex],
+        drawer: DrawerDemo(),
+        bottomNavigationBar: BottomNavigationBar(
+          currentIndex: _currentIndex,
+          onTap: _onTabHandler,
+          type: BottomNavigationBarType.fixed,
+          fixedColor: Colors.blue,
+          items: [
+            BottomNavigationBarItem(
+              icon: Icon(Icons.explore),
+              title: Text('explore'),
             ),
-          title: Text('flutter material'),
-          actions: <Widget>[
-            IconButton(
-              icon: Icon(Icons.search),
-              tooltip: 'search',
-              onPressed: () => debugPrint('search press'),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.history),
+              title: Text('history'),
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.list),
+              title: Text('list'),
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.person),
+              title: Text('person'),
             ),
           ],
-          elevation: 4.0,
-          bottom: TabBar(
-            unselectedLabelColor: Colors.black38,
-            indicatorColor: Colors.white,
-            indicatorSize: TabBarIndicatorSize.label,
-            indicatorWeight: 1.0,
-            tabs: <Widget>[
-              Tab(icon: Icon(Icons.list)),
-              Tab(icon: Icon(Icons.gradient)),
-              Tab(icon: Icon(Icons.photo_library)),
-              Tab(icon: Icon(Icons.view_quilt))
-            ],
-          ),
-        ),
-        body: TabBarView(
-          children: <Widget>[
-            ListViewDemo(),
-            BasicDemo(),
-            LayoutDemo(),
-            ViewDemo(),
-          ],
-        ),
-      ),
-    );
+        ));
+  }
+
+  void _onTabHandler(int index) {
+    setState(() {
+      _currentIndex = index;
+    });
   }
 }

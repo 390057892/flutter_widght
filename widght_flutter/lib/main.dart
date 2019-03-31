@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'demo/drawer_demo.dart';
-import 'demo/bottom_navigation_bar_demo.dart';
+import 'package:widght_flutter/constant/constant_router.dart';
 import 'demo/home_page_demo.dart';
-import 'demo/sliver_demo.dart';
+import 'demo/navigator_demo.dart';
 
 void main() => runApp(MyApp());
 
@@ -11,35 +10,19 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Home(),
-      theme: ThemeData(
-          //主题
+      theme: ThemeData( //主题
           primarySwatch: Colors.blue,
           highlightColor: Color.fromRGBO(255, 255, 255, 0.5), //选中高亮颜色
           splashColor: Colors.white70, //水波纹颜色
           platform: TargetPlatform.iOS),
+      // home: HomePageDemo(),
+      initialRoute: Router().initRoute,
+      routes: {
+        Router().initRoute: (context) => HomePageDemo(),
+        Router().onClick: (context) => Page(
+              title: "OnClick",
+            ),
+      },
     );
-  }
-}
-
-class Home extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-        backgroundColor: Colors.grey[100],
-        // appBar: AppBar(
-        //   title: Text('flutter material'),
-        //   actions: <Widget>[
-        //     IconButton(
-        //       icon: Icon(Icons.search),
-        //       tooltip: 'search',
-        //       onPressed: () => debugPrint('search press'),
-        //     ),
-        //   ],
-        //   elevation: 4.0,    
-        // ),
-        body: HomePageDemo(),
-        drawer: DrawerDemo(),
-        bottomNavigationBar: BottomNavigationBarDemo());
   }
 }
