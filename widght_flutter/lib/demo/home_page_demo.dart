@@ -39,8 +39,8 @@ class _HomePageDemoState extends State<HomePageDemo> {
               title: Text('history'),
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.list),
-              title: Text('list'),
+              icon: Icon(Icons.table_chart),
+              title: Text('table'),
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.person),
