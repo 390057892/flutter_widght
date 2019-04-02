@@ -3,8 +3,8 @@ import '../demo/drawer_demo.dart';
 import '../demo/bottom_navigation_bar_demo.dart';
 import '../view/fitst_page.dart';
 import '../demo/sliver_demo.dart';
-import '../demo/hello_demo.dart';
 import '../demo/navigator_demo.dart';
+import '../demo/material_components.dart';
 
 class HomePageDemo extends StatefulWidget {
   @override
@@ -16,7 +16,7 @@ class _HomePageDemoState extends State<HomePageDemo> {
   final List<Widget> _children = [
     FirstPage(),
     SliverDemo(),
-    Hello(),
+    MatericalComponents(),
     NavigatorDemo()
   ];
   @override
