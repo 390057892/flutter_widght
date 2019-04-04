@@ -6,6 +6,9 @@ class SwitchDemo extends StatefulWidget {
 }
 
 class _SwitchDemoState extends State<SwitchDemo> {
+
+  bool switchA=false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,7 +25,11 @@ class _SwitchDemoState extends State<SwitchDemo> {
               children: <Widget>[
                 Switch(
                   value: true,
-                  onChanged: (value){},
+                  onChanged: (value){
+                    setState(() {
+                      switchA=value;
+                    });
+                  },
                 )
               ],
             )
