@@ -2,10 +2,16 @@ import 'package:flutter/material.dart';
 import '../model/post.dart';
 
 class ViewDemo extends StatelessWidget {
-
-  Widget _itemBuilder(BuildContext context,int index){
-    return Container(
-      child: Image.network(posts[index].imageUrl,fit:BoxFit.cover),
+  Widget _itemBuilder(BuildContext context, int index) {
+    return GestureDetector(
+      onTap: () {
+        Navigator.of(context).push(MaterialPageRoute(
+            builder: (context) => PageBuilderDemo(
+                  posts: posts,
+                  index: index,
+                )));
+      },
+      child: Image.network(posts[index].imageUrl, fit: BoxFit.cover),
     );
   }
 
@@ -14,12 +20,9 @@ class ViewDemo extends StatelessWidget {
     return GridView.builder(
       padding: EdgeInsets.all(8.0),
       itemCount: posts.length,
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 3,
-          crossAxisSpacing: 8.0,
-          mainAxisSpacing: 8.0
-        ),
-        itemBuilder: _itemBuilder,
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 3, crossAxisSpacing: 8.0, mainAxisSpacing: 8.0),
+      itemBuilder: _itemBuilder,
     );
   }
 }
@@ -64,25 +67,35 @@ class PageViewDemo extends StatelessWidget {
 
 //动态pageview
 class PageBuilderDemo extends StatelessWidget {
+  final List<Post> posts;
+  final int index;
+  PageBuilderDemo({@required this.posts, @required this.index});
   Widget _pageItemBuilder(BuildContext context, int index) {
-    return Stack(
-      children: <Widget>[
-        SizedBox.expand(
-          child: Image.network(posts[index].imageUrl, fit: BoxFit.cover),
-        ),
-        Positioned(
-          bottom: 10.0,
-          left: 10.0,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              Text(posts[index].title,
-                  style: TextStyle(fontWeight: FontWeight.bold)),
-              Text(posts[index].author)
-            ],
+    return Scaffold(
+      backgroundColor: Colors.black,
+      body: Stack(
+        children: <Widget>[
+          SizedBox.expand(
+            child: Image.network(posts[index].imageUrl, fit: BoxFit.contain),
           ),
-        )
-      ],
+          Column(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: <Widget>[
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Text('${index + 1} / ${posts.length}',
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 22.0,
+                          color: Colors.white)),
+                  // Text(posts[index].author,style: TextStyle(fontSize: 32.0,color: Colors.white),)
+                ],
+              ),
+            ],
+          )
+        ],
+      ),
     );
   }
 
