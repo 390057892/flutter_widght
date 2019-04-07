@@ -17,7 +17,7 @@ class FirstPage extends StatelessWidget {
             tooltip: 'menu',
             onPressed: () => Scaffold.of(context).openDrawer(),
           ),
-          title: Text('flutter material'),
+          title: Text('Flutter Material'),
           actions: <Widget>[
             IconButton(
               icon: Icon(Icons.search),

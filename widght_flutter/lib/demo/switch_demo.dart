@@ -6,9 +6,8 @@ class SwitchDemo extends StatefulWidget {
 }
 
 class _SwitchDemoState extends State<SwitchDemo> {
-
-  bool switchA=false;
-
+  bool _switchA = false;
+  bool _switchB = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,19 +18,36 @@ class _SwitchDemoState extends State<SwitchDemo> {
       body: Container(
         padding: EdgeInsets.all(10.0),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
+                Text(
+                  _switchA ? '😄' : '😭',
+                  style: TextStyle(fontSize: 32.0),
+                ),
                 Switch(
-                  value: true,
-                  onChanged: (value){
+                  value: _switchA,
+                  onChanged: (value) {
                     setState(() {
-                      switchA=value;
+                      _switchA = value;
                     });
                   },
-                )
+                ),
               ],
+            ),
+            SwitchListTile(
+              value: _switchB,
+              onChanged: (value) {
+                setState(() {
+                  _switchB = value;
+                });
+              },
+              title: Text('Switch item B'),
+              subtitle: Text('Description'),
+              secondary:Icon(_switchB ?Icons.visibility:Icons.visibility_off),
+              selected: _switchB,
             )
           ],
         ),

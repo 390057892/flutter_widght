@@ -19,7 +19,7 @@ class DrawerDemo extends StatelessWidget {
                     image: NetworkImage('https://resources.ninghao.org/images/candy-shop.jpg'),
                     fit: BoxFit.cover,
                     colorFilter: ColorFilter.mode(
-                      Colors.yellow[400].withOpacity(0.6),
+                      Colors.blue[100].withOpacity(0.3),
                       BlendMode.hardLight)
                   )
                 ),

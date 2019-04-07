@@ -6,6 +6,10 @@ import '../demo/form_demo.dart';
 import '../demo/checkbox_demo.dart';
 import '../demo/radio_demo.dart';
 import '../demo/switch_demo.dart';
+import '../demo/slider_demo.dart';
+import '../demo/datetime_demo.dart';
+import '../demo/simple_dialog_demo.dart';
+import 'alter_dialog_demo.dart';
 
 class MatericalComponents extends StatelessWidget {
   @override
@@ -25,6 +29,10 @@ class MatericalComponents extends StatelessWidget {
           ListItem(title: 'CheckboxDemo', page: CheckboxDemo()),
           ListItem(title: 'RadioDemo', page: RadioDemo()),
           ListItem(title: 'SwitchDemo', page: SwitchDemo()),
+          ListItem(title: 'SliderDemo', page: SliderDemo()),
+          ListItem(title: 'DateTimeDemo', page: DateTimeDemo()),
+          ListItem(title: 'SimpleDialogDemo', page: SimpleDialogDemo()),
+          ListItem(title: 'AlterDialogDemo', page: AlterDialogDemo()),
         ],
       ),
     );

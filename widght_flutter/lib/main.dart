@@ -14,9 +14,10 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData( //主题
           primarySwatch: Colors.blue,
+          primaryColor: Colors.blue,
           highlightColor: Color.fromRGBO(255, 255, 255, 0.5), //选中高亮颜色
           splashColor: Colors.white70, //水波纹颜色
-          platform: TargetPlatform.iOS),
+          platform: TargetPlatform.android),
       // home: HomePageDemo(),
       initialRoute: Router().mdc,
       routes: {
