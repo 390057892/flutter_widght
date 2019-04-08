@@ -10,6 +10,8 @@ import '../demo/slider_demo.dart';
 import '../demo/datetime_demo.dart';
 import '../demo/simple_dialog_demo.dart';
 import 'alter_dialog_demo.dart';
+import 'bottom_sheet_demo.dart';
+import 'snack_bar_demo.dart';
 
 class MatericalComponents extends StatelessWidget {
   @override
@@ -33,6 +35,8 @@ class MatericalComponents extends StatelessWidget {
           ListItem(title: 'DateTimeDemo', page: DateTimeDemo()),
           ListItem(title: 'SimpleDialogDemo', page: SimpleDialogDemo()),
           ListItem(title: 'AlterDialogDemo', page: AlterDialogDemo()),
+          ListItem(title: 'BottomSheetDemo', page: BottomSheetDemo()),
+          ListItem(title: 'SnackBarDemo', page: SnackBarDemo()),
         ],
       ),
     );
