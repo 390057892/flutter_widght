@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
           splashColor: Colors.white70, //水波纹颜色
           platform: TargetPlatform.iOS),
       // home: HomePageDemo(),
-      initialRoute: Router().mdc,
+      initialRoute: Router().initRoute,
       routes: {
         Router().initRoute: (context) => HomePageDemo(),
         Router().onClick: (context) => Page(title: "OnClick",),

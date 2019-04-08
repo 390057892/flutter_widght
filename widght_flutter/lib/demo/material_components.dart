@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:widght_flutter/demo/expansion_panel_demo.dart';
 import '../demo/button_demo.dart';
 import '../demo/floating_action_button.dart';
 import '../demo/popup_menu_button.dart';
@@ -37,6 +38,7 @@ class MatericalComponents extends StatelessWidget {
           ListItem(title: 'AlterDialogDemo', page: AlterDialogDemo()),
           ListItem(title: 'BottomSheetDemo', page: BottomSheetDemo()),
           ListItem(title: 'SnackBarDemo', page: SnackBarDemo()),
+          ListItem(title: 'ExpansionPanelDemo', page: ExpansionPanelDemo()),
         ],
       ),
     );
