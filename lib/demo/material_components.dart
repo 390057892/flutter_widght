@@ -14,6 +14,7 @@ import '../demo/simple_dialog_demo.dart';
 import 'alter_dialog_demo.dart';
 import 'bottom_sheet_demo.dart';
 import 'snack_bar_demo.dart';
+import 'data_table_demo.dart';
 
 class MatericalComponents extends StatelessWidget {
   @override
@@ -40,6 +41,7 @@ class MatericalComponents extends StatelessWidget {
           ListItem(title: 'RadioDemo', page: RadioDemo()),
           ListItem(title: 'SwitchDemo', page: SwitchDemo()),
           ListItem(title: 'DateTimeDemo', page: DateTimeDemo()),
+          ListItem(title: 'DataTableDemo', page: DataTableDemo()),
         ],
       ),
     );
