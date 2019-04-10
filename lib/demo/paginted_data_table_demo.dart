@@ -25,6 +25,20 @@ class PostDataSource extends DataTableSource{
       ]
     );
   }
+
+  void _sort(getField(post),bool ascending){
+    _posts.sort((a,b){
+        if(!ascending){
+          final c=a;
+          a=b;
+          b=c;
+        }
+        final aValue=getField(a);
+        final bValue=getField(b);
+        return Comparable.compare(aValue, bValue);;
+    });
+    notifyListeners();
+  }
 }
 
 class PaginatedDataTableDemo extends StatefulWidget {
@@ -48,7 +62,7 @@ class _PaginatedDataTableDemoState extends State<PaginatedDataTableDemo> {
         child: ListView(
           children: <Widget>[
             PaginatedDataTable(
-              // rowsPerPage: posts.length,
+              rowsPerPage: 5,
               header: Text('Posts'),
               source: _postsDataSource,
               sortColumnIndex: _sortColumnIndex,
@@ -57,18 +71,11 @@ class _PaginatedDataTableDemoState extends State<PaginatedDataTableDemo> {
               columns: [
                 DataColumn(
                     label: Text('title'),
-                    onSort: (int index, bool ascending) {
+                    onSort: (int columIndex, bool ascending) {
                       setState(() {
                         _sortAscending = ascending;
-                        _sortColumnIndex = index;
-                        posts.sort((a, b) {
-                          if (!ascending) {
-                            final c = a;
-                            a = b;
-                            b = c;
-                          }
-                          return a.title.length.compareTo(b.title.length);
-                        });
+                        _sortColumnIndex = columIndex;
+                        _postsDataSource._sort((post)=>post.title.length,ascending);
                       });
                     }),
                 DataColumn(label: Text('author')),

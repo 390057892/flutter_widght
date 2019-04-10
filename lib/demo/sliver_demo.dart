@@ -69,10 +69,15 @@ class SliverListDemo extends StatelessWidget {
                 children: <Widget>[
                   AspectRatio(
                     aspectRatio: 16 / 9,
-                    child: Image.network(
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(4.0)
+                      ),
+                      child: Image.network(
                       posts[index].imageUrl,
                       fit: BoxFit.cover,
                     ),
+                    )
                   ),
                   Positioned(
                     top: 32.0,

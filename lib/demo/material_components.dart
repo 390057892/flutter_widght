@@ -16,6 +16,8 @@ import 'bottom_sheet_demo.dart';
 import 'snack_bar_demo.dart';
 import 'data_table_demo.dart';
 import 'paginted_data_table_demo.dart';
+import 'card_demo.dart';
+import 'stepper_demo.dart';
 
 class MatericalComponents extends StatelessWidget {
   @override
@@ -44,6 +46,8 @@ class MatericalComponents extends StatelessWidget {
           ListItem(title: 'DateTimeDemo', page: DateTimeDemo()),
           ListItem(title: 'DataTableDemo', page: DataTableDemo()),
           ListItem(title: 'PaginatedDataTableDemo', page: PaginatedDataTableDemo()),
+          ListItem(title: 'CardDemo', page: CardDemo()),
+          ListItem(title: 'StepperDemo', page: StepperDemo()),
         ],
       ),
     );
