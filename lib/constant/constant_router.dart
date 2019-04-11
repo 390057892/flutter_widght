@@ -3,4 +3,5 @@ class Router {
   final String onClick = '/onClick';
   final String form = '/form';
   final String mdc = '/mdc';
+  final String stateManagement='/state_management';
 }
