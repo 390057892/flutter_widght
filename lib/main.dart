@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:widght_flutter/constant/constant_router.dart';
 import 'package:widght_flutter/demo/state/state_management.dart';
+import 'package:widght_flutter/demo/stream/stream_demo.dart';
 import 'demo/home_page_demo.dart';
 import 'demo/navigator_demo.dart';
 import 'demo/form_demo.dart';
@@ -20,13 +21,14 @@ class MyApp extends StatelessWidget {
           splashColor: Colors.white70, //水波纹颜色
           platform: TargetPlatform.iOS),
       // home: HomePageDemo(),
-      initialRoute: Router().stateManagement,
+      initialRoute: Router().stream,
       routes: {
         Router().initRoute: (context) => HomePageDemo(),
         Router().onClick: (context) => Page(title: "OnClick",),
         Router().form:(context)=>FormDemo(),
         Router().mdc:(context)=>MatericalComponents(),
-        Router().stateManagement:(context)=>StateManagementDemo()
+        Router().stateManagement:(context)=>StateManagementDemo(),
+        Router().stream:(context)=>StreamDemo()
       },
     );
   }
