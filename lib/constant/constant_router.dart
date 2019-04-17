@@ -5,4 +5,5 @@ class Router {
   final String mdc = '/mdc';
   final String stateManagement = '/state_management';
   final String stream = '/stream';
+  final String rxdart='/rxdart';
 }
