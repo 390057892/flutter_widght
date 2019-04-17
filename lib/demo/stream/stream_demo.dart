@@ -30,6 +30,7 @@ class _StreamDemoHomeState extends State<StreamDemoHome> {
   StreamController<String> _streamDemo;
   StreamSink _streamSinkDemo;
   String _data = '....';
+
   @override
   void dispose() {
     _streamDemo.close();
@@ -106,12 +107,11 @@ class _StreamDemoHomeState extends State<StreamDemoHome> {
           children: <Widget>[
             // Text('$_data'),
             StreamBuilder(
-              stream: _streamDemo.stream,
-              initialData: '...',
-              builder: (context,snapshot){
-                return Text(snapshot.data);
-              }
-            ),
+                stream: _streamDemo.stream,
+                initialData: '...',
+                builder: (context, snapshot) {
+                  return Text(snapshot.data);
+                }),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
