@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:widght_flutter/demo/bloc/bloc_demo.dart';
 import '../demo/drawer_demo.dart';
 import '../demo/bottom_navigation_bar_demo.dart';
 import '../view/fitst_page.dart';
@@ -17,7 +18,7 @@ class _HomePageDemoState extends State<HomePageDemo> {
     FirstPage(),
     SliverDemo(),
     MatericalComponents(),
-    NavigatorDemo()
+    BlocDemo()
   ];
   @override
   Widget build(BuildContext context) {
