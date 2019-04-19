@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:rxdart/rxdart.dart';
-import 'dart:async';
 class RxDartDemo extends StatefulWidget {
   @override
   _RxDartDemoState createState() => _RxDartDemoState();

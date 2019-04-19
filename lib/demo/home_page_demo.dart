@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:widght_flutter/demo/bloc/bloc_demo.dart';
 import '../demo/drawer_demo.dart';
-import '../demo/bottom_navigation_bar_demo.dart';
 import '../view/fitst_page.dart';
 import '../demo/sliver_demo.dart';
-import '../demo/navigator_demo.dart';
 import '../demo/material_components.dart';
 
 class HomePageDemo extends StatefulWidget {
