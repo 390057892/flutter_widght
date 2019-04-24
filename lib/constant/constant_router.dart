@@ -8,4 +8,5 @@ class Router {
   final String rxdart='/rxdart';
   final String http='/http';
   final String animation='/animation';
+  final String i18n='/i18n';
 }
