@@ -7,4 +7,5 @@ class Router {
   final String stream = '/stream';
   final String rxdart='/rxdart';
   final String http='/http';
+  final String animation='/animation';
 }
