@@ -11,13 +11,20 @@ import 'demo/navigator_demo.dart';
 import 'demo/form_demo.dart';
 import 'demo/material_components.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:widght_flutter/demo/i18n/map/localizations_demo.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+//      locale: Locale('zh','CN'),
+//      locale: Locale('en','US'),
+      localeResolutionCallback: (Locale local,Iterable<Locale> supportedLocales){
+        return Locale('en','US');
+      },
       localizationsDelegates: [
+        LocalizationsDelegateDemo(),
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
       ],
