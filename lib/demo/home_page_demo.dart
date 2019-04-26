@@ -11,13 +11,19 @@ class HomePageDemo extends StatefulWidget {
 }
 
 class _HomePageDemoState extends State<HomePageDemo> {
+
   int _currentIndex = 0;
+
+  @override
+  bool get wantKeepAlive => true;
+
   final List<Widget> _children = [
     FirstPage(),
     SliverDemo(),
     MatericalComponents(),
     BlocDemo()
   ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

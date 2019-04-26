@@ -4,6 +4,7 @@ import 'package:widght_flutter/demo/animation/animation_demo.dart';
 import 'package:widght_flutter/demo/http/http_demo.dart';
 import 'package:widght_flutter/demo/i18n/i18n_demo.dart';
 import 'package:widght_flutter/demo/rxdart/rxdart_demo.dart';
+import 'package:widght_flutter/demo/splash_demo.dart';
 import 'package:widght_flutter/demo/state/state_management.dart';
 import 'package:widght_flutter/demo/stream/stream_demo.dart';
 import 'demo/home_page_demo.dart';
@@ -39,7 +40,7 @@ class MyApp extends StatelessWidget {
           highlightColor: Color.fromRGBO(255, 255, 255, 0.5), //选中高亮颜色
           splashColor: Colors.white70, //水波纹颜色
           platform: TargetPlatform.iOS),
-      // home: HomePageDemo(),
+//       home: SplashDemo(),
       initialRoute: Router().i18n,
       routes: {
         Router().initRoute: (context) => HomePageDemo(),

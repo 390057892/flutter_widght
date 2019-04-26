@@ -1,22 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:widght_flutter/demo/chip_demo.dart';
+import 'package:widght_flutter/demo/draggable_demo.dart';
 import 'package:widght_flutter/demo/expansion_panel_demo.dart';
+import 'package:widght_flutter/demo/frosted_glass_demo.dart';
+
 import '../demo/button_demo.dart';
-import '../demo/floating_action_button.dart';
-import '../demo/popup_menu_button.dart';
-import '../demo/form_demo.dart';
 import '../demo/checkbox_demo.dart';
-import '../demo/radio_demo.dart';
-import '../demo/switch_demo.dart';
-import '../demo/slider_demo.dart';
 import '../demo/datetime_demo.dart';
+import '../demo/floating_action_button.dart';
+import '../demo/form_demo.dart';
+import '../demo/popup_menu_button.dart';
+import '../demo/radio_demo.dart';
 import '../demo/simple_dialog_demo.dart';
+import '../demo/slider_demo.dart';
+import '../demo/switch_demo.dart';
 import 'alter_dialog_demo.dart';
 import 'bottom_sheet_demo.dart';
-import 'snack_bar_demo.dart';
+import 'card_demo.dart';
 import 'data_table_demo.dart';
 import 'paginted_data_table_demo.dart';
-import 'card_demo.dart';
+import 'snack_bar_demo.dart';
 import 'stepper_demo.dart';
 
 class MatericalComponents extends StatelessWidget {
@@ -29,6 +32,7 @@ class MatericalComponents extends StatelessWidget {
       ),
       body: ListView(
         children: <Widget>[
+          ListItem(title: 'Draggable', page: DraggableDemo()),
           ListItem(title: 'SliderDemo', page: SliderDemo()),
           ListItem(title: 'SimpleDialogDemo', page: SimpleDialogDemo()),
           ListItem(title: 'AlterDialogDemo', page: AlterDialogDemo()),
@@ -36,7 +40,8 @@ class MatericalComponents extends StatelessWidget {
           ListItem(title: 'SnackBarDemo', page: SnackBarDemo()),
           ListItem(title: 'ExpansionPanelDemo', page: ExpansionPanelDemo()),
           ListItem(title: 'ChipDemo', page: ChipDemo()),
-          ListItem(title: 'FloatingActionButton', page: FloatingActionButtonDemo()),
+          ListItem(
+              title: 'FloatingActionButton', page: FloatingActionButtonDemo()),
           ListItem(title: 'Button', page: ButtonDemo()),
           ListItem(title: 'PopupMenuButton', page: PopupMenuButtonDemo()),
           ListItem(title: 'FormDemo', page: FormDemo()),
@@ -45,9 +50,11 @@ class MatericalComponents extends StatelessWidget {
           ListItem(title: 'SwitchDemo', page: SwitchDemo()),
           ListItem(title: 'DateTimeDemo', page: DateTimeDemo()),
           ListItem(title: 'DataTableDemo', page: DataTableDemo()),
-          ListItem(title: 'PaginatedDataTableDemo', page: PaginatedDataTableDemo()),
+          ListItem(
+              title: 'PaginatedDataTableDemo', page: PaginatedDataTableDemo()),
           ListItem(title: 'CardDemo', page: CardDemo()),
           ListItem(title: 'StepperDemo', page: StepperDemo()),
+          ListItem(title: 'FrostedGlassDemo', page: FrostedGlassDemo())
         ],
       ),
     );
@@ -98,3 +105,5 @@ class ListItem extends StatelessWidget {
     );
   }
 }
+
+class CustomRoute extends PageRouteBuilder {}

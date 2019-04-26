@@ -7,14 +7,14 @@ class FloatingActionButtonDemo extends StatelessWidget {
     onPressed: () {},
     child: Icon(Icons.add),
     elevation: 0.0,
-    backgroundColor: Colors.black,
-    shape: BeveledRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
+//    shape: BeveledRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
   );
 
   final Widget _floatingActionButtonExtended = FloatingActionButton.extended(
     onPressed: () {},
     icon: Icon(Icons.add),
     label: Text('add'),
+    shape: BeveledRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(0.0))),
   );
   @override
   Widget build(BuildContext context) {
@@ -23,11 +23,16 @@ class FloatingActionButtonDemo extends StatelessWidget {
         title: Text('FloatingActionButtonDemo'),
         elevation: 0.0,
       ),
-      floatingActionButton: _floatingActionButtonExtended,
+      floatingActionButton: _floatingActionButton,
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: BottomAppBar(
-        child: Container(
-          height: 80.0,
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: <Widget>[
+            FlatButton(onPressed: null, child: Icon(Icons.home)),
+            FlatButton(onPressed: null, child: Icon(Icons.mail)),
+          ],
         ),
         shape: CircularNotchedRectangle(),
       ),
