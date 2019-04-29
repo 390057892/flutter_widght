@@ -4,6 +4,7 @@ import 'package:widght_flutter/demo/animation/animation_demo.dart';
 import 'package:widght_flutter/demo/http/http_demo.dart';
 import 'package:widght_flutter/demo/i18n/i18n_demo.dart';
 import 'package:widght_flutter/demo/rxdart/rxdart_demo.dart';
+import 'package:widght_flutter/demo/shop_demo.dart';
 import 'package:widght_flutter/demo/splash_demo.dart';
 import 'package:widght_flutter/demo/state/state_management.dart';
 import 'package:widght_flutter/demo/stream/stream_demo.dart';
@@ -41,7 +42,8 @@ class MyApp extends StatelessWidget {
           splashColor: Colors.white70, //水波纹颜色
           platform: TargetPlatform.iOS),
 //       home: SplashDemo(),
-      initialRoute: Router().i18n,
+//      initialRoute: Router().i18n,
+      initialRoute: '/shop',
       routes: {
         Router().initRoute: (context) => HomePageDemo(),
         Router().onClick: (context) => Page(title: "OnClick",),
@@ -53,6 +55,7 @@ class MyApp extends StatelessWidget {
         Router().http:(context)=>HttpDemo(),
         Router().animation:(context)=>AnimationDemo(),
         Router().i18n:(context)=>I18nDemo(),
+        '/shop':(context)=>ShoppingList(),
       },
     );
   }
