@@ -43,7 +43,7 @@ class MyApp extends StatelessWidget {
           platform: TargetPlatform.iOS),
 //       home: SplashDemo(),
 //      initialRoute: Router().i18n,
-      initialRoute: '/shop',
+      initialRoute: Router().shop,
       routes: {
         Router().initRoute: (context) => HomePageDemo(),
         Router().onClick: (context) => Page(title: "OnClick",),
@@ -55,7 +55,7 @@ class MyApp extends StatelessWidget {
         Router().http:(context)=>HttpDemo(),
         Router().animation:(context)=>AnimationDemo(),
         Router().i18n:(context)=>I18nDemo(),
-        '/shop':(context)=>ShoppingList(),
+        Router().shop:(context)=>ShoppingList(),
       },
     );
   }

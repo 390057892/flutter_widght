@@ -9,4 +9,5 @@ class Router {
   final String http='/http';
   final String animation='/animation';
   final String i18n='/i18n';
+  final String shop='/shop';
 }
